@@ -1,9 +1,4 @@
-/**
- *
- * @param {string} key
- * @returns {any}
- */
-const getState = async (key) => {
+const getState = async (key: string): Promise<any> => {
   const res = await fetch("https://bima-global.bimasoft.workers.dev/?_=/get", {
     method: "POST",
     headers: {
@@ -22,12 +17,7 @@ const getState = async (key) => {
   }
 };
 
-/**
- *
- * @param {string} key
- * @param {any} value
- */
-const setState = async (key, value) => {
+const setState = async (key: string, value: any): Promise<any> => {
   const res = await fetch("https://bima-global.bimasoft.workers.dev/?_=/set", {
     method: "POST",
     headers: {
