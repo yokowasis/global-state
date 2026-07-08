@@ -3,6 +3,8 @@ services:
     image: redis:7-alpine
     expose:
       - 6739
+    volumes:
+      - redis-data:/data
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -21,3 +23,6 @@ services:
     depends_on:
       redis:
         condition: service_healthy
+
+volumes:
+  redis-data:
